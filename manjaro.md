@@ -11,19 +11,30 @@ vlc qbittorrent speedcrunch deadbeef arduino youtube-dl kicad kicad-library kica
 	$ sudo pacman-mirrors --country Brazil Germany && sudo pacman -Syyu
 
 ### fstab
+
+Montar automaticamente uma partição. Crie a pasta o ela será montada.
+
 	$ mkdir ~/Arquivos
-	$ blkid (para lista de UUIDs)
+
+Guarde o UUID da partição com o comando
+
+	$ blkid 
+	
+Adcionar a seguinte configuração ao arquivo ``/etc/fstab`` e em seguinda remonte todas as partições.
+
 	$ sudo echo -e "UUID=<uuid>\t/home/badaro/Arquivos\tntfs-3g\tdefaults\t0\t0" >> /etc/fstab
 	$ sudo mount -a
 
 ### Swapfile
+
+Crie e configure o swapfile
 
 	# fallocate -l 4G /swapfile
 	# chmod 600 /swapfile
 	# mkswap /swapfile
 	# swapon /swapfile
 
-Adcione a linha no arquivos ``/etc/fstab``
+Adcione a seguinte linha no arquivo ``/etc/fstab``
 	
 	/swapfile none swap defaults 0 0
 
@@ -33,7 +44,7 @@ Para ignorar a maior parte das confirmações
 	
 	$ cp /etc/yaourtrc ~/.yaourtrc
 	
-descomente e muda as opções
+descomente e mude as opções:
 
 	BUILD_NOCONFIRM=1
 	EDITFILES=0
@@ -41,6 +52,8 @@ descomente e muda as opções
 ## Configurações de pacotes
 
 ### Arduino
+
+É necessário adcionar o usuário aos grupos ``lock`` e ``uucp``.
 
 	$ sudo gpasswd -a $USER lock && sudo gpasswd -a $USER uucp
 
@@ -54,11 +67,11 @@ Script de instalação
 
 	$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	
-agnoster é um tema maneiro, precisa de fontes powerline.
+agnoster é um tema maneiro, mas precisa de fontes powerline.
 
 ### Anaconda
 
-No arquivo ~/.profile faça a seguinte modficação para tornar o anaconda o pacote secundário de python (normalmente o caminho para o ananconda é /opt/anaconda/bin):
+No arquivo ``~/.profile`` faça a seguinte modficação para tornar o anaconda o pacote secundário de python (normalmente o caminho para o ananconda é ``/opt/anaconda/bin``):
 
 Default configuration of Anaconda installer (deixa o anaconda como pacote primário)
 
@@ -94,9 +107,7 @@ could be necessary before using it).For more options:
 
 See link for port configurations: [Link](http://wiki.unifiedremote.com/wiki/Configuration:Routers_and_Ports)
 
-Configure server from a browser:
-	
-<localhost:9510/web>
+Configure server from a browser: localhost:9510/web
 
 ### KiCad
 	

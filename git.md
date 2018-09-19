@@ -13,13 +13,13 @@ This is a safe and easy way to rollback to a previous state. No history is destr
 
 ## Copiar branch remoto
 
-git checkout <branch>
+    git checkout <branch>
 
 ## Submodulos
 
 Para adcioná-los:
 
-	git submodule add https://github.com/<user>/rock rock
+	git submodule add https://github.com/<user>/<repo> <repo>
 
 Para carregar os arquivos:
 
