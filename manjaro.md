@@ -2,7 +2,7 @@
 
 ## Pacotes para instalação
 
-vlc qbittorrent speedcrunch deadbeef arduino youtube-dl kicad kicad-library kicad-library-3d visual-studio-code-bin flashplugin python-pipenv otf-fira-code consolas-font powerline-fonts gitkraken
+	vlc qbittorrent speedcrunch deadbeef arduino youtube-dl kicad kicad-library kicad-library-3d visual-studio-code-bin flashplugin python-pipenv otf-fira-code consolas-font powerline-fonts gitkraken nmap micro
 
 ## Configurações do sistema
 
@@ -127,10 +127,25 @@ Excluir arquivos não usados
 
 	$ yaourt -Sy julia
 
-Inicialize o ``julia`` e instale o pacote ``IJulia`` para habilita-lo no jupyter:
+#### Configurações
+
+Para instalar o `PyPlot` é necessário o `matplotlib` do python, se o `anaconda` já está instaldo você pode configar o `PyPlot` para usa-lo definindo 
 	
-	using Pkg
-	Pkg.add("IJulia")
+	ENV["PYTHON"] = "<path/to/anaconda>/bin/python"
+
+antes de instalar o `PyCall`, ou pode configurá-lo para baixar o miniconda usando
+
+	ENV["PYTHON"] = ""
+
+Para instalar a biblioteca ``DifferentialEquations`` primeiro instale o pacote do linux ``gcc-fortran``.
+
+.. A bibioleca `Arpack` está com problemas na intalação. Instale o pacote linux `arpack` e copie o lib na pasta da biblioteca.
+
+	$ cp /usr/lib/libarpack.so.2.0.0 /home/badaro/.julia/packages/Arpack/<xxxx>/deps/usr/lib/
+
+#### Pacotes básicos
+
+	]add IJulia Plots PyCall PyPlots LaTeXString DifferentailEquations StaticArrays
 
 ### Redshift
 
