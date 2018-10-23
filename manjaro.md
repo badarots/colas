@@ -49,6 +49,10 @@ descomente e mude as opções:
 	BUILD_NOCONFIRM=1
 	EDITFILES=0
 
+Para habilitar a instalação de pacotes grandes do AUR como o `anaconda` mude a pasta de trabalho padrão do `yaourt` no arquivo de configuração.
+
+    TMPDIR="/home/badaro/.tmp"
+
 ## Configurações de pacotes
 
 ### Arduino
