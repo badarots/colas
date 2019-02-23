@@ -2,13 +2,13 @@
 
 ## Pacotes para instalação
 
-	vlc qbittorrent speedcrunch deadbeef arduino youtube-dl kicad kicad-library kicad-library-3d visual-studio-code-bin flashplugin python-pipenv otf-fira-code consolas-font powerline-fonts gitkraken nmap micro
+	base-devel vlc qbittorrent speedcrunch deadbeef arduino youtube-dl kicad kicad-library kicad-library-3d visual-studio-code-bin flashplugin python-pipenv otf-fira-code consolas-font powerline-fonts gitkraken nmap micro gimp inkscape htop
 
 ## Configurações do sistema
 
 ### Mirrorlist
 
-	$ sudo pacman-mirrors --country Brazil Germany && sudo pacman -Syyu
+	$ sudo pacman-mirrors --country Brazil Chile && sudo pacman -Syyu
 
 ### fstab
 
@@ -18,7 +18,7 @@ Montar automaticamente uma partição. Crie a pasta o ela será montada.
 
 Guarde o UUID da partição com o comando
 
-	$ blkid 
+	# blkid 
 	
 Adcionar a seguinte configuração ao arquivo ``/etc/fstab`` e em seguinda remonte todas as partições.
 
@@ -72,6 +72,8 @@ Script de instalação
 	$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	
 agnoster é um tema maneiro, mas precisa de fontes powerline.
+
+Paleta de cores bacana: [https://github.com/tobark/hyper-snazzy-gnome-terminal]
 
 ### Anaconda
 
