@@ -37,6 +37,10 @@ Crie e configure o swapfile
 Adcione a seguinte linha no arquivo ``/etc/fstab``
 	
 	/swapfile none swap defaults 0 0
+	
+Altere a swappness
+
+    $ sudo echo vm.swappiness=10 > /etc/sysctl.d/100-manjaro.conf
 
 ### yaourt
 
@@ -52,6 +56,10 @@ descomente e mude as opções:
 Para habilitar a instalação de pacotes grandes do AUR como o `anaconda` mude a pasta de trabalho padrão do `yaourt` no arquivo de configuração.
 
     TMPDIR="/home/badaro/.tmp"
+    
+### Outras configs
+
+(https://forum.manjaro.org/t/top-10-things-to-do-after-a-fresh-install-2018-edition)
 
 ## Configurações de pacotes
 
