@@ -185,5 +185,3 @@ Agora em um computador externo:
 #### Para criar um túneo ssh
 
 ssh -R 80:example.com:80 serveo.net
-
-
